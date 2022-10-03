@@ -13,10 +13,10 @@
     @php $input = 'domain' @endphp
     <div class="col-md-6">
         <div class="form-group">
-            <label for="exampleInput{{$input}}">Domain</label>
+            <label for="exampleInput{{$input}}">Sub-domain<small>(<strong style="color: red">subdomain</strong>.example.com)</small></label>
             <input type="text" name="{{$input}}" value="{{isset($row) ? $row->$input : old($input)}}"
                    class="form-control @error($input) is-invalid @enderror" id="exampleInput{{$input}}"
-                   placeholder="Enter {{$input}}">
+                   placeholder="Enter a sub-{{$input}}">
             @error($input)<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
         </div>
     </div>

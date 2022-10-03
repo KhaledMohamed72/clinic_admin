@@ -26,7 +26,7 @@
             <select name="clinic_id" class="form-control select2" style="width: 100%;">
                 <option>Select Clinic</option>
                 @foreach($clinics as $clinic)
-                    <option value="{{$clinic->id}}" {{isset($row[0]) && $row[0]->clinic_id == $clinic->id ? 'selected' : ''}}>{{$clinic->name}}</option>
+                    <option value="{{$clinic->id}}" {{isset($row[0]) || old('clinic_id') == $clinic->id ? 'selected' : ''}}>{{$clinic->name}}</option>
                 @endforeach
             </select>
         </div>
@@ -34,7 +34,7 @@
     @php $input = 'password' @endphp
     <div class="col-md-6">
         <div class="form-group">
-            <label for="exampleInput{{$input}}">Passwoed</label>
+            <label for="exampleInput{{$input}}">Password</label>
             <input type="password" name="{{$input}}" value=""
                    class="form-control @error($input) is-invalid @enderror" id="exampleInput{{$input}}"
                    placeholder="Enter {{$input}}">

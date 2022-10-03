@@ -86,7 +86,17 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $row = DB::table('users')
+            ->join('clinics','clinics.id','=','users.clinic_id')
+            ->where('users.id','=',$id)
+            ->select('clinics.*','users.*','clinics.name AS clinic_name','users.name AS user_name','users.id AS user_id','clinics.id AS clinic_id')
+            ->first();
+        if ($row){
+            return view('users.show',compact('row'));
+        }else{
+            toastr()->warning('Something went wrong, Maybe the user does not assign to clinic yet !');
+            return redirect()->route('users.index');
+        }
     }
 
     /**

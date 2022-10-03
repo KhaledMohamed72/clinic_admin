@@ -55,17 +55,6 @@ class ClinicController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -110,6 +99,28 @@ class ClinicController extends Controller
         }
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $row = DB::table('clinics')
+            ->join('users','users.clinic_id','=','clinics.id')
+            ->join('role_user','role_user.user_id','users.id')
+            ->join('roles','roles.id','role_user.role_id')
+            ->where('clinics.id','=',$id)
+            ->select('clinics.*','users.*','clinics.name AS clinic_name','users.name AS user_name','users.id AS user_id')
+            ->first();
+        if ($row){
+            return view('clinics.show',compact('row'));
+        }else{
+            toastr()->warning('Something went wrong, Maybe the clinic does not have admin user yet !');
+            return redirect()->route('clinics.index');
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *
