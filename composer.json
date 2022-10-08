@@ -10,8 +10,10 @@
         "jenssegers/agent": "^2.6",
         "laravel/fortify": "^1.13",
         "laravel/framework": "^9.19",
+        "laravel/jetstream": "^2.12",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "livewire/livewire": "^2.5",
         "yoeunes/toastr": "^2.0"
     },
     "require-dev": {

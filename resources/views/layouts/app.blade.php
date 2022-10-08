@@ -10,8 +10,8 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{asset('assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- PAGE STYLES -->
-    @yield('styles')
-    <!-- Theme style -->
+@yield('styles')
+<!-- Theme style -->
     <link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -19,16 +19,16 @@
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
     <!-- Navbar -->
-    @include('layouts.header')
-    <!-- /.navbar -->
+@include('layouts.header')
+<!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    @include('layouts.side-bar')
-    <!-- Content Wrapper. Contains page content -->
+@include('layouts.side-bar')
+<!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        @include('layouts.page-header')
-        <!-- /.content-header -->
+    @include('layouts.page-header')
+    <!-- /.content-header -->
 
         <!-- Main content -->
         <section class="content">
