@@ -20,7 +20,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>{{$clinics}}</h3>
+                    <h3>{{$clinics ?? 0}}</h3>
 
                     <p>Clinics</p>
                 </div>
@@ -35,7 +35,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>{{$doctors}}</h3>
+                    <h3>{{$doctors ?? 0}}</h3>
 
                     <p>Doctors</p>
                 </div>
@@ -50,7 +50,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>{{$receptionists}}</h3>
+                    <h3>{{$receptionists ?? 0}}</h3>
 
                     <p>Receptionists</p>
                 </div>
@@ -65,7 +65,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <h3>{{$patients}}</h3>
+                    <h3>{{$patients ?? 0}}</h3>
 
                     <p>Patients</p>
                 </div>
